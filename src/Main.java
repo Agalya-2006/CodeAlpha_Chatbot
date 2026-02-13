@@ -1,23 +1,30 @@
 import java.util.Scanner;
 
-public class Main {
+public class AIChatbot {
+
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
-        String userInput;
+        String input;
 
-        System.out.println("Chatbot: Hello! I am a simple AI Chatbot.");
-        System.out.println("Chatbot: Type 'bye' to exit.");
+        System.out.println("Chatbot: Hello! Type 'bye' to exit.");
 
         while (true) {
             System.out.print("You: ");
-            userInput = sc.nextLine().toLowerCase();
+            input = sc.nextLine().toLowerCase();
 
-            if (userInput.contains("hello") || userInput.contains("hi")) {
-                System.out.println("Chatbot: Hello! Nice to meet you 😊");
+            if (input.contains("hello")) {
+                System.out.println("Chatbot: Hi there!");
+            } else if (input.contains("how are you")) {
+                System.out.println("Chatbot: I am fine. How can I help you?");
+            } else if (input.contains("bye")) {
+                System.out.println("Chatbot: Goodbye!");
+                break;
+            } else {
+                System.out.println("Chatbot: Sorry, I don't understand.");
+            }
+        }
 
-            } else if (userInput.contains("how are you")) {
-                System.out.println("Chatbot: I am doing great! Thank you for asking.");
+        sc.close();
+    }
+}
 
-            } else if (userInput.contains("internship")) {
-                System.out.println("Chatbot: This chatbot is created for
